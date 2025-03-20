@@ -1,66 +1,233 @@
 <!DOCTYPE html>
-<html lang="en"data-bs-theme="dark">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Using Bootstrap Stylesheet -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internet Fundamentals - Baht Otgonbayar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Website Template</title>
-  </head>
-
-  <!-- Bootstrap 5 switch -->
-<div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" id="darkModeSwitch" checked>
-    <label class="form-check-label" for="darkModeSwitch">Dark Mode</label>
-</div>
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-    const htmlElement = document.documentElement;
-    const switchElement = document.getElementById('darkModeSwitch');
-
-    // Set the default theme to dark if no setting is found in local storage
-    const currentTheme = localStorage.getItem('bsTheme') || 'dark';
-    htmlElement.setAttribute('data-bs-theme', currentTheme);
-    switchElement.checked = currentTheme === 'dark';
-
-    switchElement.addEventListener('change', function () {
-        if (this.checked) {
-            htmlElement.setAttribute('data-bs-theme', 'dark');
-            localStorage.setItem('bsTheme', 'dark');
-        } else {
-            htmlElement.setAttribute('data-bs-theme', 'light');
-            localStorage.setItem('bsTheme', 'light');
+    <style>
+        .network-diagram {
+            max-width: 100%;
+            margin: 2rem auto;
+            border-radius: 10px;
         }
-    });
-});
-  </script>  
-  
-  <!-- body content is what is displayed in browser -->
-  <body>
-    <!-- Placeholder for navigation that is in navbar.html-->
-    <div id="nav-placeholder"></div>
-    
-    <h1>
-      Internet Information
-    </h1>
+        .encryption-compare {
+            background: var(--bs-secondary-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            overflow-x: auto;
+        }
+        .module-section {
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--bs-border-color);
+        }
+        .module-overview {
+            background: var(--bs-secondary-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
 
-    <!--  script code to add navbar -->
+<body>
+    <!-- Navigation Placeholder -->
+    <div id="nav-placeholder"></div>
+
+    <main class="container mt-5 pt-4">
+        
+        <!-- Module Overview -->
+        <section class="module-overview">
+            <h2 class="mb-3">Module 2 Overview: Internet, Encoding & Encryption</h2>
+            <p class="lead">This module explores fundamental concepts of digital communication including:</p>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="h-100 p-3 bg-body-tertiary rounded-3">
+                        <h5>Internet Infrastructure</h5>
+                        <ul class="mb-0">
+                            <li>Data transmission</li>
+                            <li>Network protocols</li>
+                            <li>Packet switching</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="h-100 p-3 bg-body-tertiary rounded-3">
+                        <h5>Data Encoding</h5>
+                        <ul class="mb-0">
+                            <li>Binary/Decimal systems</li>
+                            <li>ASCII standard</li>
+                            <li>Data representation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="h-100 p-3 bg-body-tertiary rounded-3">
+                        <h5>Data Protection</h5>
+                        <ul class="mb-0">
+                            <li>Encryption methods</li>
+                            <li>HTTPS/TLS</li>
+                            <li>Security best practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internet Overview Section -->
+        <section class="module-section">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h2>How Data Travels</h2>
+                    <p>The internet is a global network using standardized protocols (TCP/IP) to communicate. Key components:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">✔ <strong>Packet Switching:</strong> Data divided into routed packets</li>
+                        <li class="mb-3">✔ <strong>Routing Protocols:</strong> BGP/OSPF path optimization</li>
+                        <li class="mb-3">✔ <strong>Physical Layer:</strong> Fiber, copper, wireless</li>
+                    </ul>
+                    <a href="https://www.cloudflare.com/learning/network-layer/how-does-the-internet-work/" 
+                       class="btn btn-outline-primary" 
+                       target="_blank">Cloudflare Guide</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Sample-network-diagram.png" 
+                         alt="Network Diagram" 
+                         class="network-diagram img-fluid">
+                </div>
+            </div>
+        </section>
+
+        <!-- Encoding Section -->
+        <section class="module-section">
+            <h2 class="mb-4">Data Encoding</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="h-100 p-4 bg-body-tertiary rounded-3">
+                        <h4>Binary & Decimal</h4>
+                        <p>Number systems conversion:</p>
+                        <pre>Decimal: 10 = Binary: 1010</pre>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="h-100 p-4 bg-body-tertiary rounded-3">
+                        <h4>ASCII Encoding</h4>
+                        <p>Character representation:</p>
+                        <pre>A = 65 (01000001)
+a = 97 (01100001)</pre>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img src="https://cdn.glitch.global/2ab86dd5-8e40-4221-bbf2-3def46773eec/thumbnails%2F9589c9b0-e2ea-402e-ad90-f844e77b6f9f.image.png?1741892955747" 
+                         class="img-fluid rounded-3" 
+                         alt="Encoding Spreadsheet">
+                </div>
+            </div>
+        </section>
+
+        <!-- Encryption Section -->
+        <section class="module-section">
+            <h2 class="mb-4">Data Encryption</h2>
+            <div class="encryption-compare">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Symmetric Encryption</h4>
+                        <ul class="list-unstyled">
+                            <li>✔ Single shared key</li>
+                            <li>✔ Fast processing</li>
+                            <li>✔ AES standard</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Asymmetric Encryption</h4>
+                        <ul class="list-unstyled">
+                            <li>✔ Public/private keys</li>
+                            <li>✔ Secure key exchange</li>
+                            <li>✔ RSA algorithm</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="https://www.csfieldguide.org.nz/en/interactives/rsa-key-generator/" 
+                       class="btn btn-primary" 
+                       target="_blank">Try RSA Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Practices -->
+        <section class="module-section">
+            <h2 class="mb-4">Secure Communication</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-lock-fill fs-1 me-3"></i>
+                        <div>
+                            <h4>HTTPS/TLS</h4>
+                            <p>Encrypts data in transit using hybrid encryption</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="h-100 p-4 bg-body-tertiary rounded-3">
+                        <h4>Best Practices</h4>
+                        <ul>
+                            <li>Use strong, unique passwords</li>
+                            <li>Keep software updated</li>
+                            <li>Enable 2FA</li>
+                            <li>Verify SSL certificates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-body-secondary">© 2024 Baht Otgonbayar</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script>
-      // Load the navigation menu into the placeholder
-      $("#nav-placeholder").load("navbar.html");
+    $(function() {
+        // Load navbar
+        $("#nav-placeholder").load("navbar.html", function() {
+            // Initialize Bootstrap components
+            const dropdowns = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+            dropdowns.map(function(dropdownToggle) {
+                return new bootstrap.Dropdown(dropdownToggle);
+            });
+
+            // Dark Mode Initialization
+            const htmlElement = document.documentElement;
+            const switchElement = document.getElementById('darkModeSwitch');
+            
+            // Set initial theme
+            const currentTheme = localStorage.getItem('bsTheme') || 'dark';
+            htmlElement.setAttribute('data-bs-theme', currentTheme);
+            switchElement.checked = currentTheme === 'dark';
+
+            // Theme toggle handler
+            switchElement.addEventListener('change', function() {
+                const theme = this.checked ? 'dark' : 'light';
+                htmlElement.setAttribute('data-bs-theme', theme);
+                localStorage.setItem('bsTheme', theme);
+            });
+        });
+    });
     </script>
-  </body>
+</body>
 </html>
