@@ -1,82 +1,229 @@
 <!DOCTYPE html>
-<html lang="en"data-bs-theme="dark">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Using Bootstrap Stylesheet -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+<html lang="en" data-bs-theme="dark">
+<head>
+    <!-- Meta tags and styles remain unchanged -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Baht Otgonbayar - Cybersecurity Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Website Template</title>
-  </head>
-  
-  <!-- Bootstrap 5 switch -->
-<div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" id="darkModeSwitch" checked>
-    <label class="form-check-label" for="darkModeSwitch">Dark Mode</label>
-</div>
-  <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-    const htmlElement = document.documentElement;
-    const switchElement = document.getElementById('darkModeSwitch');
-
-    // Set the default theme to dark if no setting is found in local storage
-    const currentTheme = localStorage.getItem('bsTheme') || 'dark';
-    htmlElement.setAttribute('data-bs-theme', currentTheme);
-    switchElement.checked = currentTheme === 'dark';
-
-    switchElement.addEventListener('change', function () {
-        if (this.checked) {
-            htmlElement.setAttribute('data-bs-theme', 'dark');
-            localStorage.setItem('bsTheme', 'dark');
-        } else {
-            htmlElement.setAttribute('data-bs-theme', 'light');
-            localStorage.setItem('bsTheme', 'light');
+    <style>
+        .featurette-divider { margin: 5rem 0; }
+        .skill-card {
+            background: var(--bs-secondary-bg);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
         }
-    });
-});
-  </script>
-  
-  
+        .gallery-img {
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover { transform: scale(1.03); }
+    </style>
+</head>
 
-  <!-- body content is what is displayed in browser -->
-  <body>
-    <!-- Placeholder for navigation that is in navbar.html-->
+<body>
+    <!-- Navigation Placeholder -->
     <div id="nav-placeholder"></div>
 
-    <div class="alert alert-info" role="alert">
-      You can update the navbar.html file with a different navigation menu. For
-      bootstrap code for different navbars go to
-      <a
-        href="https://getbootstrap.com/docs/5.3/components/navbar/"
-        target="_blank">Visit Bootstrap navbar</a>. Delete this part when you are done.
+    <!-- Hero Section (Updated Contact Button) -->
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="https://cdn.glitch.global/2ab86dd5-8e40-4221-bbf2-3def46773eec/thumbnails%2F64c54d31-ea72-4fba-b95b-41759d54b779.IMG_5519.JPG?1741890343340" style="width:600px;height:300px; 
+                     class="d-block mx-lg-auto img-fluid rounded-3" 
+                     alt="Myself in the Mountains" 
+                        <figcaption class="text-center mt-2">Camping in the mountains</figcaption>
+                    
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Cybersecurity Professional</h1>
+                <p class="lead">Specializing in Identity & Access Management | Cloud Security Solutions</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <!-- Modified Contact Button -->
+                    <button type="button" 
+                            class="btn btn-primary btn-lg px-4 me-md-2" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#emailModal">
+                        Contact
+                    </button>
+                    <a href="https://www.linkedin.com/in/botgonbayar/" 
+                       class="btn btn-outline-secondary btn-lg px-4" 
+                       target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <img src="https://cdn.pixabay.com/photo/2023/05/26/06/54/ai-generated-8018869_1280.png" style="width:1280px;height:800px;" >
-    
-                                                                                                                           
-    <!-- Content of webpage -->
-    <div class="container bg-primary-subtle text-primary-emphasis p-3">
-      <p>
-        Read the project iteration 01 requirements.
-      </p>
+    <!-- All Existing Sections Remain Unchanged -->
+    <!-- Resume Summary -->
+    <div class="container my-5">
+        <div class="p-5 text-center bg-body-tertiary rounded-3">
+            <h2 class="mb-4">Professional Summary</h2>
+            <p class="col-lg-8 mx-auto fs-5">
+                Cybersecurity professional pursuing a BS in Cybersecurity at MSU Denver. 
+                Currently enhancing security frameworks in the U.S. energy sector with 
+                expertise in Azure environments and IAM strategies.
+            </p>
+        </div>
     </div>
 
-    <!--  script code to add navbar -->
+    <!-- Skills Section -->
+    <div class="container marketing my-5">
+        <h2 class="text-center mb-5">Core Competencies</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="skill-card">
+                    <h3>Technical Expertise</h3>
+                    <ul class="list-unstyled">
+                        <li>✔ Identity & Access Management (IAM)</li>
+                        <li>✔ Azure Cloud Security</li>
+                        <li>✔ Security Protocol Implementation</li>
+                        <li>✔ Hybrid Environment Security</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="skill-card">
+                    <h3>Professional Skills</h3>
+                    <ul class="list-unstyled">
+                        <li>✅ Cross-functional Collaboration</li>
+                        <li>✅ Risk Assessment & Mitigation</li>
+                        <li>✅ Security Framework Design</li>
+                        <li>✅ Continuous Process Improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="container my-5">
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Education</h2>
+                <p class="lead">
+                    <strong>Metropolitan State University of Denver</strong><br>
+                    Bachelor of Science in <a href="https://catalog.msudenver.edu/preview_program.php?catoid=48&poid=12014" 
+                    target="_blank">Cybersecurity</a><br>
+                    890 Auraria Pkwy, Denver, CO 80204
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img src="https://marvel-b1-cdn.bc0a.com/f00000000295839/www.msudenver.edu/wp-content/uploads/2022/08/Tuition-Lock-Campus.jpg" 
+                     class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" 
+                     alt="Campus Image">
+                                       <figcaption class="text-center mt-2">MSU Campus in the Fall</figcaption>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interests Section -->
+    <div class="container my-5">
+        <h2 class="text-center mb-5">Personal Interests</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="h-100 p-4 bg-body-tertiary rounded-3">
+                    <h4>Emerging Identity & Access Management Technologies</h4>
+                    <p>Exploring advancements in biometric authentication systems and their applications in IAM.</p>
+                    <a href="https://identitymanagementinstitute.org/emerging-trends-in-identity-and-access-management/" 
+                       class="btn btn-outline-primary" 
+                       target="_blank">Read Article</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-4 bg-body-tertiary rounded-3">
+                    <h4>Cloud Security Innovations</h4>
+                    <p>Researching novel approaches to hybrid cloud environment security configurations.</p>
+                    <a href="https://www.getastra.com/blog/cloud/cloud-security-trends/" 
+                       class="btn btn-outline-primary" 
+                       target="_blank">Read Article</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visual Gallery -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Certifications</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <img src="https://cdn.glitch.global/2ab86dd5-8e40-4221-bbf2-3def46773eec/thumbnails%2F766feac7-888c-45d6-ba83-f6e559eee96a.image.png?1741892017738" 
+                     class="gallery-img img-fluid" 
+                     alt="Security+">
+                  <figcaption class="text-center mt-2">CompTIA Security+ Cert</figcaption>
+            </div>
+            <div class="col-md-4">
+                <img src="https://cdn.glitch.global/2ab86dd5-8e40-4221-bbf2-3def46773eec/thumbnails%2F67193320-63a8-4508-b90a-7e2c76253259.Screenshot%202024-10-09%20144337.png?1742498253662" 
+                     class="gallery-img img-fluid" 
+                     alt="SC-300">
+                                 <figcaption class="text-center mt-2">Mircosoft SC-300 Cert</figcaption>
+            </div>
+            <div class="col-md-4">
+                <img src="https://cdn.glitch.global/2ab86dd5-8e40-4221-bbf2-3def46773eec/thumbnails%2F426fbb37-e84c-4ddd-a46c-ce215346593c.image.png?1742498155941" 
+                     class="gallery-img img-fluid" 
+                     alt="Okta Professional">
+                                            <figcaption class="text-center mt-2">Okta Professional Cert</figcaption>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Email Modal (Added at Bottom) -->
+    <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel">Contact Baht</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="mb-4">How would you like to contact me?</p>
+                    <a href="mailto:nateotgonbayar@gmail.com?subject=Portfolio%20Contact" 
+                       class="btn btn-primary btn-lg w-100 mb-3">
+                       <i class="bi bi-envelope-fill"></i> Send Email
+                    </a>
+                    <button type="button" class="btn btn-outline-secondary btn-lg w-100" data-bs-dismiss="modal">
+                        Maybe Later
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-body-secondary">© 2024 Baht Otgonbayar</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Existing Scripts -->
     <script>
-      // Load the navigation menu into the placeholder
-      $("#nav-placeholder").load("navbar.html");
+    $(function() {
+        $("#nav-placeholder").load("navbar.html", function() {
+            const dropdowns = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+            dropdowns.map(function(dropdownToggle) {
+                return new bootstrap.Dropdown(dropdownToggle);
+            });
+
+            const htmlElement = document.documentElement;
+            const switchElement = document.getElementById('darkModeSwitch');
+            const currentTheme = localStorage.getItem('bsTheme') || 'dark';
+            htmlElement.setAttribute('data-bs-theme', currentTheme);
+            switchElement.checked = currentTheme === 'dark';
+
+            switchElement.addEventListener('change', function() {
+                const theme = this.checked ? 'dark' : 'light';
+                htmlElement.setAttribute('data-bs-theme', theme);
+                localStorage.setItem('bsTheme', theme);
+            });
+        });
+    });
     </script>
-  </body>
+</body>
 </html>
